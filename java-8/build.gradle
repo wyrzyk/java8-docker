@@ -12,5 +12,5 @@ task run(type: Exec) {
 }
 
 task clean(type: Exec) {
-    commandLine 'docker', 'rmi', '-f', "$containerName:$version"
+    commandLine '../scripts/clean.sh', containerName, "$imageName:$version"
 }

@@ -1,6 +1,6 @@
 FROM phusion/baseimage
 
-ENV JAVA_HOME /usr/jdk1.8.0_92
+ENV JAVA_HOME /usr/jdk1.8.0_91
 
 RUN curl \
   --silent \
