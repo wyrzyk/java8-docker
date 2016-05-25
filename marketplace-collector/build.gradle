@@ -1,0 +1,16 @@
+def imageName = "io.leansoft/marketplace-collector"
+def version = "1.0.1"
+def fullName = "$imageName:$version"
+def containerName = 'marketplace-collector-docker'
+
+task build(type: Exec) {
+    commandLine 'docker', 'build', '-t', fullName, '.'
+}
+
+task run(type: Exec) {
+    commandLine 'docker', 'run', '--name', containerName, '-itd', fullName
+}
+
+task clean(type: Exec) {
+    commandLine '../scripts/clean.sh', containerName, "$imageName:$version"
+}
