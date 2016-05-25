@@ -1,7 +1,7 @@
-def imageName = "io.leansoft/marketplace-collector"
-def version = "1.0.1"
+def imageName =  "io.leansoft/java"
+def version = "8.92"
 def fullName = "$imageName:$version"
-def containerName = 'marketplace-collector-docker'
+def containerName = 'java-docker'
 
 task build(type: Exec) {
     commandLine 'docker', 'build', '-t', fullName, '.'
@@ -12,5 +12,5 @@ task run(type: Exec) {
 }
 
 task clean(type: Exec) {
-    commandLine '../scripts/clean.sh', containerName, "$imageName:$version"
+    commandLine 'clean.sh', containerName, "$imageName:$version"
 }
